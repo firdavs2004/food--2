@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,900&display=swap');
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+*::selection{
+    background: var(--red);
+    color: #fff;
+}
+html{
+    font-size: 52.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+section{
+    padding: 2rem 9%;
+}
+.heading{
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    color: #666;
+}
+.heading span{
+    color: red;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 5px solid red;
+    color: red;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+
+}
+.btn::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 10%;
+    width: 0%;
+    transition:  .1s linear;
+    background: red;
+    z-index: -1;
+    color: #fff;
+}
+.btn:hover::before{
+    width: 100%; 
+    left: 0%;
+   
+}
+body{
+    background: #f7f7f7;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    background: #fff;
+    padding: 2rem 9%;
+    box-shadow: 0 5rem 1rem rgba(0,0,0, .1);
+}
+.logo{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #666;
+}
+.logo i{
+    padding-right: 1rem;
+    color: red;
+}
+.navbar a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: #666;
+}
+.navbar a:hover{
+    color: red;
+}
+#menu-bar{
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+    border: 2px solid #666;
+    border-radius: 10px;
+    padding: 13px 18px;
+
+    display: none ;
+}
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-height: 100vh;
+    align-items: center;
+
+}
+.content-1{
+    flex:  1 1 40rem;
+    padding-top: 5rem;
+}
+.content-1 h3{
+    font-size: 4rem;
+    color: #333;
+}
+.content-1 p{
+    font-size: 1rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.home.image img{
+    width: 100%;
+    padding: 1rem;
+    animation: float 3s linear infinite;
+}
+@keyframes float{
+    0%,100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(1rem);
+    }
+}
+.box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr ; 
+    display: grid;
+   
+}
+.spekility.box-container.box{
+    flex: 1 1 30rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1rem 1rem rgba(0,0,0, .1 );
+    border: 10px solid rgba(0,0,0, .3);
+}
+.images{
+   
+}
+.image{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    z-index: 0;
+    border: 1rem solid rgba(0,0,0, .1);
+    
+}
+.content img{
+  width: 20%;
+  margin: 1.5rem 0;
+  z-index: 1;
+}
+
+.content{
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+}
+.content h3{
+    font-size: 2rem;
+    color: #333;
+}
+.content p{
+    font-size: 1rem;
+    color: #666;
+    padding:  1rem 0;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 52%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 3rem;
+    }
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding: 4rem;
+    }
+}
+@media(max-width:768px){
+    #menu-bar{
+        display: inline;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f7f7f7;
+        border-top: 1rem solid rgba(0,0,0, .1 );
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+    }
+    .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+    }
+    .navbar a{
+        margin: 1rem;
+        padding: 1rem;
+        display: block;
+        border: 1rem solid rgba(0,0,0, .1);
+        border-left: 2rem solid red;
+        background: #fff ;
+    }
+}
+
